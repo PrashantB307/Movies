@@ -37,3 +37,30 @@
   }
 }
 
+.banner-card {
+  background-color: white;
+  width: 100vw;
+}
+
+.banner-img {
+  height: 80vh;
+  width: 100%;
+}
+
+.banner-title {
+  position: absolute;
+  color:white;
+  top: 58vh;
+  left: 5vh;
+  font-size: 2rem;
+}
+
+.banner-text {
+  position: absolute;
+  color: white;
+  top: 66vh;
+  left: 5vh;
+  margin-right: 4vw;
+  font-size: 1rem;
+}
+
