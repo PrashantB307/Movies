@@ -84,3 +84,76 @@
 
 }
 
+.movie-title {
+  position:absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+.movie-button {
+  position: absolute;
+  top: 80%;
+
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.favourites-list{
+  padding: 3rem;
+}
+
+.favourites-table{
+  padding: 3rem;
+}
+
+@media screen and (max-width: 400px) {
+
+  .banner-card{
+    height: 25vh;
+  }
+
+  .banner-img {
+    height: 30vh;
+  }
+
+  .banner-title {
+    top: 10vh;
+    left: 5vw;
+  }
+
+  .banner-text {
+    top: 15vh;
+    left: 5vw;
+  }
+
+  .movies-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: center;
+  }
+
+  .movie-card {
+    width: 35vw;
+    margin: 1rem;
+    color: white;
+    position: relative;
+  
+  }
+  
+  .movie-title {
+    position:absolute;
+    left: 1rem;
+    top: 1rem;
+
+  }
+  
+}
