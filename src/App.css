@@ -64,3 +64,23 @@
   font-size: 1rem;
 }
 
+.trending {
+  padding-top: 3rem;
+  font-size: 2.5rem;
+}
+
+.movies-list{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.movie-card {
+  width: 20vw;
+  margin: 1rem;
+  color: white;
+  position: relative;
+
+}
+
