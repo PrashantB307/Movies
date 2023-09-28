@@ -69,5 +69,33 @@ export default class List extends Component {
     );
   };
   
+  handleFavourites = (movieObj) => {
+    let localStoragemovies = JSON.parse(localStorage.getItem("movies")) || [];
+    if (this.state.favMov.includes(movieObj.id)) {
+      localStoragemovies = localStoragemovies.filter(
+        (movie) => movie.id !== movieObj.id
+      );
+    } else {
+      localStoragemovies.push(movieObj);
+    }
+
+    console.log(localStoragemovies);
+
+    localStorage.setItem("movies", JSON.stringify(localStoragemovies));
+    let tempData = localStoragemovies.map((movieObj) => movieObj.id);
+    this.setState({
+      favMov: [...tempData],
+    });
+  };
+
+  async componentDidMount() {
+    let ans = await axios.get(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${this.state.currPage}`
+    );
+    this.setState({
+      movies: [...ans.data.results],
+    });
+  }
+
   
 }
