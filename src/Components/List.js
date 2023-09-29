@@ -105,7 +105,42 @@ export default class List extends Component {
             <span className="visually-hidden">Loading...</span>
           </div>
         ) : (
-          
+          <div>
+            <h3 className="text-center trending">
+              <strong style={{color: "red"}}>Trending Movies</strong>
+            </h3>
+            <div className="movies-list">
+            {this.state.movies.map((movieObj) => (
+                <div
+                  className="card movie-card"
+                  onMouseEnter={() => this.handleEnter(movieObj.id)}
+                  onMouseLeave={this.handleLeave}
+                >
+                <img
+                    src={`https://image.tmdb.org/t/p/original${movieObj.backdrop_path}`}
+                    className="card-img-top banner-img"
+                    alt="..."
+                    style={{ height: "40vh" }}
+                  />
+                  <h5 className="card-title movie-title">
+                    {movieObj.original_title}
+                  </h5>
+                  <div className="button-wrapper">
+                    {this.state.hover === movieObj.id && (
+                      <button
+                        className="btn btn-primary movie-button"
+                        onClick={() => this.handleFavourites(movieObj)}
+                      >
+                     {this.state.favMov.includes(movieObj.id) ?
+                         " Remove From Favourites " : " Add to Favourites "}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+             
+          </div>
         )}
       </>
     );
