@@ -100,6 +100,13 @@ export default class List extends Component {
   render() {
     return (
       <>
+      {this.state.movies.length === 0 ? (
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        ) : (
+          
+        )}
       </>
     );
   }
