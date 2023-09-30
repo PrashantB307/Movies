@@ -75,6 +75,52 @@ export default class Favourites extends Component {
     });
   };
 
+  sortPopularityDesc = () => {
+    let allMovies = this.state.movies;
+    allMovies.sort((objA, objB) => {
+      return objB.popularity - objA.popularity;
+    });
+    this.setState({
+      movies: [...allMovies],
+    });
+  };
+  sortRatingAsc = () => {
+    let allMovies = this.state.movies;
+    allMovies.sort((objA, objB) => {
+      return objA.vote_average - objB.vote_average;
+    });
+    this.setState({
+      movies: [...allMovies],
+    });
+  };
+
+  sortRatingDesc = () => {
+    let allMovies = this.state.movies;
+    allMovies.sort((objA, objB) => {
+      return objB.vote_average - objA.vote_average;
+    });
+    this.setState({
+      movies: [...allMovies],
+    });
+  };
+
+  handlePageNum = (page) => {
+    this.setState({
+      currPage: page,
+    });
+  };
+
+  handleDelete = (id) => {
+    let newMovies = this.state.movies.filter((movieObj) => {
+      return movieObj.id !== id;
+    });
+    this.setState({
+      movies:[...newMovies]
+    })
+    localStorage.setItem("movies", JSON.stringify(newMovies));
+
+  }
+
   
 }
 
