@@ -52,6 +52,29 @@ export default class Favourites extends Component {
     });
   }
 
+  handleCurrGenre = (genre) => {
+    this.setState({
+      currGenre: genre,
+    });
+    // movies filter movies setstate
+  };
+
+  handleText = (e) => {
+    this.setState({
+      currText: e.target.value,
+    });
+  };
+
+  sortPopularityAsc = () => {
+    let allMovies = this.state.movies;
+    allMovies.sort((objA, objB) => {
+      return objA.popularity - objB.popularity;
+    });
+    this.setState({
+      movies: [...allMovies],
+    });
+  };
+
   
 }
 
