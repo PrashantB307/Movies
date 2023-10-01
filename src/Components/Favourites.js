@@ -144,6 +144,17 @@ export default class Favourites extends Component {
       37: "Western",
     };
 
+    let filteredMovies = this.state.movies;
+
+    if (this.state.currText === "") {
+      filteredMovies = this.state.movies;
+    } else {
+      filteredMovies = filteredMovies.filter((movieObj) => {
+        let movieName = movieObj.original_title.toLowerCase();
+        return movieName.includes(this.state.currText); //[t,o,p, ,g,u,n, ,m,a,v,e,r,i,c,k]
+      });
+    }
+
     
   }
 }
