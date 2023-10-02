@@ -193,6 +193,17 @@ export default class Favourites extends Component {
           </ul>
         </div>
         
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            {pagesArr.map((page) => (
+              <li class="page-item">
+                <button class="page-link" onClick={() => this.handlePageNum(page)}>
+                  {page}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     );
   }
