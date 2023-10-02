@@ -192,7 +192,24 @@ export default class Favourites extends Component {
             )}
           </ul>
         </div>
-        
+        <div class="col favourites-table">
+          <div class="row">
+            <input
+              type="text"
+              className="col-8"
+              placeholder="Search"
+              value={this.state.currText}
+              onChange={this.handleText}
+            ></input>
+            <input
+              type="number"
+              className="col-4"
+              value={this.state.limit}
+              onChange={(e) => this.setState({ limit: e.target.value })}
+            ></input>
+          </div>
+          
+        </div>
         <nav aria-label="Page navigation example">
           <ul class="pagination">
             {pagesArr.map((page) => (
