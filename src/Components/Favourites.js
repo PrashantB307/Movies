@@ -208,7 +208,64 @@ export default class Favourites extends Component {
               onChange={(e) => this.setState({ limit: e.target.value })}
             ></input>
           </div>
-          
+          <div class="row">
+            <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">Genre</th>
+                  <th scope="col">
+                    <i
+                      class="fa-solid fa-caret-up"
+                      onClick={this.sortPopularityAsc}
+                    />
+                    Popularity
+                    <i
+                      class="fa-solid fa-caret-down"
+                      onClick={this.sortPopularityDesc}
+                    />
+                  </th>
+                  <th scope="col">
+                    <i
+                      class="fa-solid fa-caret-up"
+                      onClick={this.sortRatingAsc}
+                    />
+                    Rating
+                    <i
+                      class="fa-solid fa-caret-down"
+                      onClick={this.sortRatingDesc}
+                    />
+                  </th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredMovies.map((movieObj) => (
+                  <tr>
+                    <th scope="row">
+                      <img
+                        src={`https://image.tmdb.org/t/p/original${movieObj.backdrop_path}`}
+                        style={{ width: "6.5rem" }}
+                        alt="..."
+                      />
+                      {movieObj.original_title}
+                    </th>
+                    <td>{genreId[movieObj.genre_ids[0]]}</td>
+                    <td>{movieObj.popularity}</td>
+                    <td>{movieObj.vote_average}</td>
+                    <td>
+                      <button
+                        class="btn btn-outline-danger"
+                        onClick={() => this.handleDelete(movieObj.id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
         <nav aria-label="Page navigation example">
           <ul class="pagination">
