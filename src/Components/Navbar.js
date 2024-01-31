@@ -15,7 +15,7 @@ export default class Navbar extends Component {
         }}
       >
         <Link to="/" style={{textDecoration:"none"}}>
-          <h1>MoviesVilla</h1>
+          <h1>MovieMania</h1>
         </Link>
 
         <Link to="/fav" style={{textDecoration:"none"}}> 
